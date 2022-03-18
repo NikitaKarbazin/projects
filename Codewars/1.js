@@ -998,3 +998,213 @@ function getCount(str) {
   
   return vowelsCount;
 }
+
+
+
+function century(year) {
+  return Math.ceil(year/100); //using ceiling method to round up to nearest century (100)
+}
+
+function basicOp(operation, value1, value2)
+{
+  var cases = {
+    '+': value1 + value2,
+    '-': value1 - value2,
+    '*': value1 * value2,
+    '/': value1 / value2
+  };
+  return cases[operation]
+}
+
+function abbrevName(name){
+
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+
+function abbrevName(name){
+
+    return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+
+}
+
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
+
+function digitize(n) {
+  //code here
+  return n.toString().split('').reverse().map(string => +string);
+  
+  
+  
+}
+
+const digitize = (x) => {
+  x = `${x}`.split('').reverse();
+  let a = []
+  for(let i = 0; i < x.length; i++){
+    a.push(+x[i])
+  }
+  return a
+}
+
+function digitize(n) {
+  return n.toString().split("").reverse().map(function(i){
+    return parseInt(i);
+  });
+}
+
+function findNeedle(haystack) {
+  // your code here
+  for(let ch of haystack){
+    if(ch === 'needle'){
+      return 'found the needle at position ' + haystack.indexOf(ch);
+    }
+  }
+}
+
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
+
+function maps(x){
+    return x.map((num) => num * 2); 
+}
+
+maps = x => x.map(e => e * 2);
+
+function maps(x){
+
+  var newArr = [];
+  
+  x.map(function(y){
+    newArr.push(y*2);
+});
+
+return newArr;
+
+
+
+}
+
+function maps(x){
+//return x.map(el => el * 2);
+let arr = [];
+for(let i = 0; i < x.length; i++){
+arr.push(x[i] * 2);
+}
+return arr;
+}
+
+var stringToNumber = function(str){
+  // put your code here
+  return parseInt(str);
+}
+
+function invert(array) {
+   return array.map(el => -el);
+}
+
+function invert(array) {
+  var newArr = [];
+  for(var i = 0; i < array.length; i++){
+    newArr.push(-array[i]);
+  }
+   return newArr;
+}
+
+function past(h, m, s){
+  return ((h*3600)+(m*60)+s)*1000;
+}
+
+function solution(str, ending){
+  // TODO: complete
+  return  str.endsWith(ending);
+}
+
+function solution(str, ending){
+  return str.substr(-ending.length) == ending;
+}
+
+function solution(str, ending){
+  // TODO: complete
+  if(str.length < ending.length){
+    return false;
+  }
+  if(!ending)
+    return true;
+  
+  let strRes = str.slice(-ending.length);
+  console.log(strRes, str, ending)
+  
+  for(let i = 0 ; i < strRes.length; i++){
+    if(strRes[i] !== ending[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+function oddOrEven(arr) {
+  return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
+}
+
+function oddOrEven(array) {
+  var result = 0;
+  for (var i = 0; i < array.length; i++)
+  {result+=array[i];}
+  if (result%2 == 0)
+  {return "even";}
+  else{return "odd";}
+}
+
+
+function divisors(integer) {
+  var divs = [];
+  
+  for(var i = 2; i < integer; i++) {
+    if(integer % i === 0) {
+      divs.push(i);
+    }
+  }
+  
+  return divs.length ? divs : integer + ' is prime';
+};
+
+
+function divisors(integer) {
+  
+  let arr = [];
+  
+  for(let i = 2; i < integer -1; i++){
+    if(integer % i === 0){
+      arr.push(i);
+    }
+  }
+  if(arr.length === 0){
+    return `${integer} is prime`;
+  }
+  
+  return arr;
+};
+
+
+function divisors(integer) {
+  var res = []
+  for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
+  return res.length ? res : integer + ' is prime'
+};
+
+
+const number1 = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+
+
+var number = function(busStops){
+  var totalPeople = 0;
+  for (var i=0; i<busStops.length; i++) {
+    totalPeople += busStops[i][0];
+    totalPeople -= busStops[i][1];
+  }
+  return totalPeople;
+}
