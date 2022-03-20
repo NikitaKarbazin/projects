@@ -37,8 +37,7 @@ function getLargestExpressionResult(a, b) {
 
 
   function getSuccessRate(statistic) {
-  
-  
+    
     let count = 0;
   
     for(let ch of statistic){
@@ -52,7 +51,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function getPlan(startProduction, numberOfMonths, percent) {
-  
   
     if(numberOfMonths === 0){
       return [];
@@ -69,7 +67,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function splitString(str) {
-  
   
     let stringArr = [];
   
@@ -151,10 +148,7 @@ function getLargestExpressionResult(a, b) {
     return -Math.abs(num);
   }
 
-  function removeChar(str){
-
-     return str.slice(1, str.length - 1);
-   };
+ 
 
    function removeChar1(str){
  
@@ -279,9 +273,9 @@ function validatePIN(pin) {
 
 function validatePIN (pin) {
   
-  var pinlen = pin.length;
-  var isCorrectLength = (pinlen == 4 || pinlen == 6);
-  var hasOnlyNumbers = pin.match(/^\d+$/);
+  let pinlen = pin.length;
+  let isCorrectLength = (pinlen == 4 || pinlen == 6);
+  let hasOnlyNumbers = pin.match(/^\d+$/);
     
   if(isCorrectLength && hasOnlyNumbers){
     return true;
@@ -293,7 +287,6 @@ function validatePIN (pin) {
 
 
 function validatePIN (pin) {
-  //return true or false
   let n = pin.length;
   if( n !== 4 && n !== 6)
       return false;
@@ -445,7 +438,7 @@ function nbYear(p0, percent, aug, p) {
 
 function nbYear(p0, percent, aug, p) {
     
-  for (var years = 0; p0 < p; years++) {
+  for (let years = 0; p0 < p; years++) {
     p0 = Math.floor(p0 + p0 * percent / 100 + aug);
   }
   return years
@@ -467,7 +460,6 @@ const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
 
 
 function longest(s1, s2) {
-  // your code
   s3 = s1 + s2;
   s4 = s3.split("");
   s4 = s4.sort().filter(function(element, index, array){
@@ -592,7 +584,7 @@ const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
 function DNAStrand(dna){
 
   let result= "";
-      for(var i =0; i<dna.length; i++) 
+      for(let i =0; i<dna.length; i++) 
       {
         if (dna[i]==="A") 
        {
@@ -637,7 +629,6 @@ function DNAStrand(dna){
       }
     
   }
-  console.log(dnk.join(''));
   return dnk.join('');
 }
 
@@ -812,7 +803,7 @@ function getMiddle(s)
 
 
 function getMiddle(string) {
-  var middleIndex = string.length / 2;
+  let middleIndex = string.length / 2;
   if (string.length % 2 == 0) {
     return string.slice(middleIndex - 1, middleIndex + 1);
   } else {
@@ -904,9 +895,9 @@ function squareDigits(num){
 
 
 function squareDigits(num){
-    var string = num.toString();
-    var results = [];
-    for (var i = 0; i < string.length; i++){
+    let string = num.toString();
+    let results = [];
+    for (let i = 0; i < string.length; i++){
         results[i] = string[i] * string[i];
     }
     return Number(results.join(''));
@@ -918,10 +909,10 @@ function getCount(str) {
 }
 
 function getCount(str) {
-  var vowelsCount = 0;
-  var vowels = ["a","e","i","o","u"];
-  for(var i = 0;i < str.length;i++){
-    for(var j=0;j<vowels.length;j++){
+  let vowelsCount = 0;
+  let vowels = ["a","e","i","o","u"];
+  for(let i = 0;i < str.length;i++){
+    for(let j=0;j<vowels.length;j++){
       if(str[i] === vowels[j]){
         vowelsCount++;
       }
@@ -933,7 +924,7 @@ function getCount(str) {
 
 
 function getCount(str) {
-  var vowelsCount = 0;
+  let vowelsCount = 0;
   function isVowel(char) {
      if (char.length == 1) {
     let vowels = new Array("a", "e", "i", "o", "u");
@@ -964,7 +955,7 @@ function century(year) {
 
 function basicOp(operation, value1, value2)
 {
-  var cases = {
+  let cases = {
     '+': value1 + value2,
     '-': value1 - value2,
     '*': value1 * value2,
@@ -1102,7 +1093,7 @@ function oddOrEven(arr) {
 
 function oddOrEven(array) {
   var result = 0;
-  for (var i = 0; i < array.length; i++)
+  for (let i = 0; i < array.length; i++)
   {result+=array[i];}
   if (result%2 == 0)
   {return "even";}
@@ -1111,9 +1102,9 @@ function oddOrEven(array) {
 
 
 function divisors(integer) {
-  var divs = [];
+  let divs = [];
   
-  for(var i = 2; i < integer; i++) {
+  for(let i = 2; i < integer; i++) {
     if(integer % i === 0) {
       divs.push(i);
     }
@@ -1150,9 +1141,9 @@ function divisors(integer) {
 const number1 = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
 
 
-var number = function(busStops){
-  var totalPeople = 0;
-  for (var i=0; i<busStops.length; i++) {
+let number = function(busStops){
+  let totalPeople = 0;
+  for (let i=0; i<busStops.length; i++) {
     totalPeople += busStops[i][0];
     totalPeople -= busStops[i][1];
   }
