@@ -23,7 +23,7 @@ function getLargestExpressionResult(a, b) {
 
 
   function makeAbbr(words) {
-    // write code here
+  
     let abbr = words.charAt(0);
   
     for(let i = 0; i < words.length; i++){
@@ -37,7 +37,7 @@ function getLargestExpressionResult(a, b) {
 
 
   function getSuccessRate(statistic) {
-    // write code here
+  
   
     let count = 0;
   
@@ -52,7 +52,7 @@ function getLargestExpressionResult(a, b) {
 
 
   function getPlan(startProduction, numberOfMonths, percent) {
-    // write code here
+  
   
     if(numberOfMonths === 0){
       return [];
@@ -69,7 +69,7 @@ function getLargestExpressionResult(a, b) {
 
 
   function splitString(str) {
-    // write code here
+  
   
     let stringArr = [];
   
@@ -87,7 +87,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function scrollingText(word) {
-    // write code here
   
     let wordArray = [];
   
@@ -100,7 +99,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function isSpecialNumber(n) {
-    // write code here
   
     let strN = '' +  n;
   
@@ -115,7 +113,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function isTidy(number) {
-    // write code here
   
     let strN = '' + number;
   
@@ -129,7 +126,6 @@ function getLargestExpressionResult(a, b) {
 
 
   function isJumping(number) {
-    // write code here
   
     let strNum = '' + number;
   
@@ -156,13 +152,12 @@ function getLargestExpressionResult(a, b) {
   }
 
   function removeChar(str){
-    //You got this!
+
      return str.slice(1, str.length - 1);
-   
    };
 
    function removeChar1(str){
-    //You got this!
+ 
      let str1 = str.split('');
      str1.shift();
      str1.pop();
@@ -176,11 +171,10 @@ function getLargestExpressionResult(a, b) {
    };
 
    function removeChar(str){
-    //You got this!
-     var input_str = str;
-     var output_str = '';
+     let input_str = str;
+     let output_str = '';
      
-     for (var i = 1; i < input_str.length-1; i++) {
+     for (let i = 1; i < input_str.length-1; i++) {
        output_str += input_str[i];
      }
    
@@ -190,18 +184,6 @@ function getLargestExpressionResult(a, b) {
 
    function solution(str){
     return str.split('').reverse().join('');  
-  }
-
-  function solution(str) {
- 
-    let splitString = str.split(''); 
-    
-    let reverseArray = splitString.reverse();
-    
-    let joinArray = reverseArray.join('');
-    
-    return joinArray;
-    
   }
 
 
@@ -216,13 +198,7 @@ function getLargestExpressionResult(a, b) {
     }
   }
 
-  class SmallestIntegerFinder {
-    findSmallestInt(args) {
-      args.sort(function(a, b) {
-      return a - b; } )
-      return args[0];
-    }
-  }
+
 
 
   class SmallestIntegerFinder {
@@ -235,11 +211,6 @@ function getLargestExpressionResult(a, b) {
   function noSpace(x){return x.split(' ').join('')}
 
 
-const binaryArrayToNumbers = arr => {
-  // your code
-  return parseInt((arr.join('') + '').replace(/[^01]/gi, ''), 2);
-};
-
 
 const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
 
@@ -250,7 +221,6 @@ function rowSumOddNumbers(n) {
 
 
 function rowSumOddNumbers(n) {
-  // TODO
   if( n===1){
     return 1;
   }
@@ -285,7 +255,6 @@ function addBinary(a,b) {
 
 
 function validatePIN (pin) {
-//return true or false
   
   let pink = pin.split('');
   console.log(pink);
@@ -325,10 +294,10 @@ function validatePIN (pin) {
 
 function validatePIN (pin) {
   //return true or false
-  var n = pin.length;
-  if( n != 4 && n != 6)
+  let n = pin.length;
+  if( n !== 4 && n !== 6)
       return false;
-  for (var i in pin)
+  for (let i in pin)
       if (pin[i] > '9' || pin[i] < '0')
           return false;
   return true;
@@ -354,9 +323,8 @@ function validatePIN(pin) {
 
 
 function printerError(s) {
-    // your code
-    var count = 0;
-    for(var i = 0; i < s.length; i++) {
+    let count = 0;
+    for(let i = 0; i < s.length; i++) {
       if (s[i] > "m") {
         count++;
       }
@@ -369,7 +337,7 @@ const printerError = s => `${s.replace(/[a-m]/gi, "").length}/${s.length}`;
 
 
 function printerError(s) {
-    // your code
+
   let regexp = /[N-Z]/gi;
 
   let count = s.match(regexp);
@@ -417,7 +385,6 @@ const openOrSenior = data => {
 
 
 function friend(friends){
-  //your code here
   return friends.filter(w => w.length === 4 );
 }
 
@@ -425,7 +392,7 @@ function friend(friends){
 function friend(friends){
   
   //Create new array called "myFriends" for add your friends
-  var i,
+  let i,
       len = friends.length,
       myFriends = [];
   
@@ -456,7 +423,7 @@ function findNextSquare(sq) {
 
 
 function findNextSquare(sq) {
-  var number = Math.sqrt(sq);
+  let number = Math.sqrt(sq);
   if(Math.round(number) === number) {
     return Math.pow(++number, 2)
   }
@@ -465,7 +432,6 @@ function findNextSquare(sq) {
 
 
 function nbYear(p0, percent, aug, p) {
-    // your code
   
   let l = p0;
   let i = 0;
@@ -473,7 +439,6 @@ function nbYear(p0, percent, aug, p) {
     l += Math.floor(l * (percent / 100) + aug);
     i++;
   }
-  console.log(p0, percent, aug, p, i, l);
   return i;
 }
 
@@ -488,13 +453,12 @@ function nbYear(p0, percent, aug, p) {
 
 
 function longest(s1, s2) {
-  // your code
+  
   let s3 = (s1 + s2).split('').sort();
   for(let i = 1; i < s3.length; i++){
     if(s3[i] === s3[i - 1])
       s3[i - 1]= '';
   }
-  console.log(s3);
   return s3.join('');
 }
 
@@ -519,7 +483,6 @@ function longest(s1, s2) {
     let array = combi.split('').sort();
  
     for (let i = 0; i <= array.length; i++) {
-        console.log(array[i]);//test
         if (!output.includes(array[i]) ) {
               output.push(array[i]);
         }
@@ -529,7 +492,6 @@ function longest(s1, s2) {
 
 
 function sumTwoSmallestNumbers(numbers) {  
-  //Code here
   numbers.sort(function (a, b) {
                return a - b;
                });
@@ -539,13 +501,13 @@ function sumTwoSmallestNumbers(numbers) {
 
 
 function sumTwoSmallestNumbers(numbers) {  
-  var smallestNumber = 0,
+  let smallestNumber = 0,
       secondSmallest = 0;
   
   smallestNumber = Math.min(numbers[0], numbers[1]);
   secondSmallest = Math.max(numbers[0], numbers[1]);
   
-  for (var index = 2; index < numbers.length; index++) {
+  for (let index = 2; index < numbers.length; index++) {
     if (numbers[index] < smallestNumber) {
       secondSmallest = smallestNumber;
       smallestNumber = numbers[index];
@@ -579,10 +541,10 @@ const GetSum = (a, b) => {
 
 
 function GetSum( a,b ) {
-   var result = 0;
-   var bigger = a > b ? a : b;
-   var smaller = a > b ? b : a;
-   for (var i = smaller; i <= bigger; i++) { result += i }
+   let result = 0;
+   let bigger = a > b ? a : b;
+   let smaller = a > b ? b : a;
+   for (let i = smaller; i <= bigger; i++) { result += i }
    return result
 }
 
@@ -594,7 +556,7 @@ function maskify(cc) {
 
 function maskify(cc) {
   cc = cc.split("");
-  for(var i = 0; i < cc.length - 4; i++){
+  for(let i = 0; i < cc.length - 4; i++){
     cc[i] = "#";
 }
 
@@ -616,10 +578,10 @@ function maskify(cc) {
 }
 
 
-var pairs = {'A':'T','T':'A','C':'G','G':'C'};
+let pairs1 = {'A':'T','T':'A','C':'G','G':'C'};
 
 function DNAStrand(dna){
-  return dna.split('').map(function(v){ return pairs[v] }).join('');
+  return dna.split('').map(function(v){ return pairs1[v] }).join('');
 }
 
 
@@ -628,8 +590,8 @@ const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
 
 
 function DNAStrand(dna){
-  //your code here
-  var result= "";
+
+  let result= "";
       for(var i =0; i<dna.length; i++) 
       {
         if (dna[i]==="A") 
@@ -657,7 +619,6 @@ function DNAStrand(dna){
 
 
 function DNAStrand(dna){
-  //your code here
   
   let dnk = dna.split('');
   
@@ -711,7 +672,6 @@ String.prototype.toJadenCase = function (str) {
   for(let i = 0; i < arr.length; i++){
     arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
   }
-  console.log(arr);
   return arr.join(' ');
 };
 
@@ -724,7 +684,6 @@ function findShort(s){
     if(small.length > arr[i].length)
       small = arr[i];
   }
-  console.log(small);
   return small.length;
 }
 
@@ -760,7 +719,6 @@ function XO(str) {
 
 
 function XO(str) {
-    //code here
   let countX = 0;
   let countO = 0;
   let stn = str.split('');
@@ -798,7 +756,7 @@ function isIsogram(str){
 
 
 function isIsogram(str){
-  var i, j;
+  let i, j;
   str = str.toLowerCase();
   for(i = 0; i < str.length; ++i)
     for(j = i + 1; j < str.length; ++j)
@@ -809,7 +767,6 @@ function isIsogram(str){
 
 
 function isIsogram(str){
-  //...
   if(str.length === 0){
     return true;
   }
@@ -833,8 +790,8 @@ function isSquare(n) {
 const isSquare = n => Number.isInteger(Math.sqrt(n));
 
 
-var isSquare = function(n){  
-  return (Math.sqrt(n) % 1 === 0) && n >= 0; // fix me
+let isSquare = function(n){  
+  return (Math.sqrt(n) % 1 === 0) && n >= 0; 
 }
 
 
@@ -979,8 +936,8 @@ function getCount(str) {
   var vowelsCount = 0;
   function isVowel(char) {
      if (char.length == 1) {
-    var vowels = new Array("a", "e", "i", "o", "u");
-    var isVowel = false;
+    let vowels = new Array("a", "e", "i", "o", "u");
+    let isVowel = false;
 
     for (e in vowels) {
       if (vowels[e] == char) {
@@ -1018,7 +975,7 @@ function basicOp(operation, value1, value2)
 
 function abbrevName(name){
 
-  var nameArray = name.split(" ");
+  let nameArray = name.split(" ");
   return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
 }
 
@@ -1033,11 +990,7 @@ function digitize(n) {
 }
 
 function digitize(n) {
-  //code here
   return n.toString().split('').reverse().map(string => +string);
-  
-  
-  
 }
 
 const digitize = (x) => {
@@ -1056,7 +1009,7 @@ function digitize(n) {
 }
 
 function findNeedle(haystack) {
-  // your code here
+
   for(let ch of haystack){
     if(ch === 'needle'){
       return 'found the needle at position ' + haystack.indexOf(ch);
@@ -1076,7 +1029,7 @@ maps = x => x.map(e => e * 2);
 
 function maps(x){
 
-  var newArr = [];
+  let newArr = [];
   
   x.map(function(y){
     newArr.push(y*2);
@@ -1098,7 +1051,6 @@ return arr;
 }
 
 var stringToNumber = function(str){
-  // put your code here
   return parseInt(str);
 }
 
@@ -1119,7 +1071,6 @@ function past(h, m, s){
 }
 
 function solution(str, ending){
-  // TODO: complete
   return  str.endsWith(ending);
 }
 
@@ -1128,7 +1079,6 @@ function solution(str, ending){
 }
 
 function solution(str, ending){
-  // TODO: complete
   if(str.length < ending.length){
     return false;
   }
