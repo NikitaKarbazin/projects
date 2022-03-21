@@ -1,3 +1,84 @@
+function arrayDiff(a, b) {
+  
+  return a.filter(i => !b.includes(i));
+  }
+
+function arrayDiff(a, b) {
+
+  let set1 = Array.from(new Set(a));
+  let set2 = Array.from(new Set(b));
+
+  return set1.filter(i => !set2.includes(i));
+  }
+
+
+
+
+function digital_root(n) {
+  
+  if(n === 0)
+    return 0;
+   function split(a){
+   a = a.toString().split('').reduce((a, b) => Number.parseInt(a) + Number.parseInt(b), 0);
+     return (a > 0) && (a < 10) ? a : split(a);
+    }
+  
+  return split(n);
+}
+
+function spinWords(string){
+  
+  let arr = string.split(' ');
+  
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i].length > 4)
+      arr[i] = arr[i].split('').reverse().join('');
+  }
+  
+  return arr.join(' ');
+}
+
+function sortByCount(A) {
+  // карта для подсчета того, сколько раз встречаются строка в массиве
+   let valuesMap = new Map();
+
+   // проходимся по каждому элементу массива...
+   A.forEach(elem => {
+       // ... и помещаем значение в карту, увеличивая, при необходимости, значение счетчика
+       valuesMap.set(elem, valuesMap.has(elem) ? valuesMap.get(elem) + 1 :  1);
+   });
+
+   // сортируем полученный массив объектов "{'строка', число}" в порядке убывания частоты присутствия в исходном массиве
+   let arr =  [...valuesMap.entries()].sort((a, b) => a[1] - b[1]);
+   
+   for(let i = 0; i < arr.length; i++){
+     if(arr[i][1] % 2 !== 0)
+       return arr[i][0];
+   }  
+ 
+   return 0;
+ 
+}
+
+function solution(number){
+  let arr = [];
+  
+  if(number <= 0){
+    return 0;
+  }
+  
+  for(let i = 1; i < number; i++){
+    if(i % 3 === 0 && i % 5 === 0)
+      arr.push(i);
+    else if(i % 3 === 0)
+      arr.push(i);
+    else if(i % 5 === 0)
+      arr.push(i);
+  }
+  
+  return arr.reduce((el, acc) => el + acc, 0);
+}
+
 function getLargestExpressionResult(a, b) {
     const array1 = [a + b, a - b, a * b, a / b]; 
   
