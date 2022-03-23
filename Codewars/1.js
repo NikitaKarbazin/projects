@@ -1,3 +1,165 @@
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+
+function updateRecords(records, id, prop, value) {
+  if(prop !== 'tracks' && value !== ''){
+    records[id][prop] = value;
+  }
+  else if(prop === 'tracks' && !(records[id].hasOwnProperty('tracks'))){
+    records[id]['tracks'] = [value];
+  }
+  else if(prop === 'tracks' && value !== ''){
+    records[id]['tracks'].push(value);
+  }
+  else if(value === ''){
+    delete records[id][prop];
+  }
+  
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+/////////////////////////////////////////////////
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      if (prop in contacts[i]) {
+        return contacts[i][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+
+lookUpProfile("Akira", "likes");
+//////////////////////////
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+///////////////
+
+let a = 8, b = 6;
+//swap b a  
+[a, b] = [b, a];
+
+/////////////////////////////////////
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+
+  const [a,b,...arr] = list; 
+
+  return arr;
+}
+const arr = removeFirstTwo(source);
+
+
+/////////////////////////////////////////////
+
+class Vegetable{
+  constructor(name){
+    this.name = name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+////////////////////////////////////////////////////////////////////////////
+class Thermostat {
+  constructor(fahrTemp){
+    this._fahrTemp = fahrTemp;
+  }
+  get temperature(){
+    return 5/9 * (this._fahrTemp - 32);
+  } 
+  set temperature(newTemp){
+    this._fahrTemp = newTemp * 9.0 / 5 + 32;
+  }
+}
+
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+///////////////////////////////////////////////////////////////////////
+
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+
+  // responseFromServer is set to true to represent a successful response from a server
+    resolve("We got the data").then(result => {
+      console.log(result);
+    });
+  } else {  
+    // responseFromServer is set to false to represent an unsuccessful response from a server
+    reject("Data not received").catch(error => {
+      console.log(error);
+    })
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
 function arrayDiff(a, b) {
   
   return a.filter(i => !b.includes(i));
