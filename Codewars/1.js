@@ -494,7 +494,6 @@ function addBinary(a,b) {
 function validatePIN (pin) {
   
   let pink = pin.split('');
-  console.log(pink);
   if(pink.length === 4 || pink.length === 6){
     for(let i = 0; i < pink.length; i++ ){
     if(!Number.isInteger(+pink[i]) || pink[i] === '\n'){
@@ -595,7 +594,7 @@ function openOrSenior(data){
 
 
 function openOrSenior(data){
-  var result = [];
+  let result = [];
   data.forEach(function(member) {
     if(member[0] >= 55 && member[1] > 7) {
       result.push('Senior');
@@ -1294,7 +1293,7 @@ function invert(array) {
 
 function invert(array) {
   var newArr = [];
-  for(var i = 0; i < array.length; i++){
+  for(let i = 0; i < array.length; i++){
     newArr.push(-array[i]);
   }
    return newArr;
@@ -1320,7 +1319,6 @@ function solution(str, ending){
     return true;
   
   let strRes = str.slice(-ending.length);
-  console.log(strRes, str, ending)
   
   for(let i = 0 ; i < strRes.length; i++){
     if(strRes[i] !== ending[i]){
@@ -1376,7 +1374,8 @@ function divisors(integer) {
 
 function divisors(integer) {
   var res = []
-  for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
+  for (let i = 2; i <= Math.floor(integer / 2); ++i)
+   if (integer % i == 0) res.push(i);
   return res.length ? res : integer + ' is prime'
 };
 
