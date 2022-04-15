@@ -1,0 +1,42 @@
+body {
+  margin: 0 auto;
+  font-family: sans-serif;
+  width: max-content;
+}
+
+.title {
+  text-align: center;
+  color: saddlebrown;
+}
+
+.cat-dog {
+  display: block;
+}
+
+.avatars-container {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.avatar-container {
+  display: inline-block;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 10px solid burlywood;
+}
+
+.avatar--cat {
+  /* insert styles */
+  object-fit: none;
+  object-position:top left;
+}
+
+.avatar--dog {
+  /* insert styles */
+  object-fit: none;
+  object-position:top right;
+}
