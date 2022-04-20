@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+
+  --header-height: 40px;
+  --footer-height: 60px;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section:target {
+  background-color: yellowgreen;
+}
+
+
+.header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: var(--header-height);
+}
+
+.logo {
+  display: inline-block;
+  margin-right: 40px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  color: #fff;
+}
+
+.nav {
+  display: inline-block;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  display: inline-block;
+  margin: 20 px;
+}
+
+.nav__link {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 5px;
+  background-color: #666;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  line-height: var(--footer-height);
+}
+
+.section {
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.nav__link:link {
+  color: violet;
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav__link:visited {
+  color: yellow;
+  background-color: #aaa;
+}
+
+.nav__link:hover {
+  color: green;
+  background-color: #aaa;
+}
+
+.nav__link:active {
+  color: red;
+}
+
+.section:not(:last-child)::after {
+  content: "";
+  height: 4px;
+  border-radius: 4px solid black;
+
+}

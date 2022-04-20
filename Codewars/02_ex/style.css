@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+
+  --header-height: 40px;
+  --footer-height: 60px;
+
+}
+
+.header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: var(--header-height);
+}
+
+.footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  line-height: var(--footer-height);
+}
+
+.section {
+  padding: 20px;
+}
+
+.section-2 {
+  background-color: pink;
+}
+
+.section-4 {
+  background-color: rosybrown;
+}
+
+.container {
+  max-width: 960px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
