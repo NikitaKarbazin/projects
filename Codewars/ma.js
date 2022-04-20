@@ -261,7 +261,6 @@ function getProductId(url) {
 
 
 function getLeaders(numbers) {
-  // write your code here
   const leaders = [];
 
   for (let i = 0; i < numbers.length; i++) {
