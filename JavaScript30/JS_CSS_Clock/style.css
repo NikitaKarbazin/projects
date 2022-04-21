@@ -49,15 +49,4 @@ body {
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
-.hour-hand {
-  width: 30%;
-}
-
-.min-hand{
-  width: 50%;
-}
-
-.second-hand{
-  width: 45%;
-}
 
