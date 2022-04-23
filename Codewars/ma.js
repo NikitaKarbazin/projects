@@ -54,10 +54,10 @@ function getGuestsCount(guestInput) {
 function canTheyBook(adultsCount, childrenCount) {
 
   if (((adultsCount + childrenCount < 8)
-   (adultsCount <= 8 && Object.is(childrenCount, undefined)))
+  ||(adultsCount <= 8 && Object.is(childrenCount, undefined)))
   && (adultsCount >= 1)
   && ((childrenCount - adultsCount <= childrenCount / 2)
-   (adultsCount && Object.is(childrenCount, undefined)))) {
+  ||(adultsCount && Object.is(childrenCount, undefined)))) {
     return true;
   }
 
@@ -67,17 +67,17 @@ function canTheyBook(adultsCount, childrenCount) {
 
 function canTheyBook(adultsCount, childrenCount, babiesCount) {
   if (((adultsCount + childrenCount <= 8)
-   (adultsCount + childrenCount + babiesCount <= 9 && babiesCount > 1)
-   (adultsCount <= 8
+  || (adultsCount + childrenCount + babiesCount <= 9 && babiesCount > 1)
+  || (adultsCount <= 8
   && (Object.is(childrenCount, undefined)
   && Object.is(babiesCount, undefined))))
   && (adultsCount >= 1)
   && (((childrenCount + babiesCount) - adultsCount
   <= (childrenCount + babiesCount) / 2
   && adultsCount + childrenCount + babiesCount <= 9)
-   (adultsCount && (Object.is(childrenCount, undefined)
+  || (adultsCount && (Object.is(childrenCount, undefined)
   && Object.is(babiesCount, undefined)))
-   (childrenCount - adultsCount <= childrenCount / 2
+  || (childrenCount - adultsCount <= childrenCount / 2
   && Object.is(babiesCount, undefined)))) {
     return true;
   }
@@ -92,8 +92,8 @@ function recommendRoom(adultsCount, childrenCount, babiesCount) {
     return 'small room + extra bed';
   } else if ((adultsCount + childrenCount + babiesCount > 4
   && adultsCount + childrenCount + babiesCount < 8)
-   (adultsCount + childrenCount <= 8 && Object.is(babiesCount, undefined))
-   (adultsCount <= 8
+  || (adultsCount + childrenCount <= 8 && Object.is(babiesCount, undefined))
+  || (adultsCount <= 8
   && Object.is(childrenCount, undefined)
   && Object.is(babiesCount, undefined))) {
     return 'big room';
@@ -111,15 +111,15 @@ function getTriathlonDistance(distance) {
   } else if (distance > 0 && distance < 3.86) {
     const remainder = Math.round((226.31 - distance) * 100) / 100;
 
-    return { swim: `${remainder} to go!` };
+    return  `swim: ${remainder} to go!` ;
   } else if (distance >= 3.86 && distance < 184.11) {
     const remainder = Math.round((226.31 - distance) * 100) / 100;
 
-    return { bike: `${remainder} to go!` };
+    return  `bike: ${remainder} to go!` ;
   } else if (distance >= 184.11 && distance < 226.31) {
     const remainder = Math.round((226.31 - distance) * 100) / 100;
 
-    return { run: `${remainder} to go!` };
+    return ` run: ${remainder} to go!` ;
   } else if (distance >= 226.31) {
     return 'You\'re done! Stop running!';
   }
