@@ -111,6 +111,11 @@ function zeroArray(m, n) {
   console.log(checkInventory("apples"));
 
   ///////////////
+
+
+//  const arr = Object.entries(users); ------> из обьекта в массив
+
+
   let users = {
     Alan: {
       age: 27,
